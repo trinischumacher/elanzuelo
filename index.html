@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>El Anzuelo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico" /></head>
+
+<body class="grid_container">
+
+	<header class="header">
+		<a href="index.html"><img src="images/logo.png" alt="Logo" class="logo1"></a>
+	</header>
+	<nav class="navbar">
+		<a href="tatuajesyp.html" class="paginainterior">TATUAJES Y PIERCINGS</a>
+		<a href="contacto.html" class="paginainterior">CONTACTO</a>
+	</nav>
+	<main class="main1" >
+	
+	   <div class="slider">
+	
+		<div class="elementoCarousel fade">
+		  <div class="numbertext">1 / 6</div>
+		  <img src="images/studio1.jpg" >
+		  
+		</div>
+	  
+		<div class="elementoCarousel fade">
+		  <div class="numbertext">2 / 6</div>
+		  <img src="images/studio2.jpg" >
+		  
+		</div>
+	  
+		<div class="elementoCarousel fade">
+		  <div class="numbertext">3 / 6</div>
+		  <img src="images/studio3.jpg" >
+		  
+		</div>
+		<div class="elementoCarousel fade">
+		  <div class="numbertext">4 / 6</div>
+		  <img src="images/studio4.jpg" >
+		  
+		</div>
+
+		<div class="elementoCarousel fade">
+			<div class="numbertext">5 / 6</div>
+			<img src="images/studio5.jpg" >
+			
+		  </div>
+		  <div class="elementoCarousel fade">
+			<div class="numbertext">6 / 6</div>
+			<img src="images/studio6.jpg" >
+			
+		  </div>
+		</div>
+	  
+		<div>
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+	
+	  
+	
+	  <div style="text-align:center">
+		<span class="dot" onclick="slideActual(1)"></span>
+		<span class="dot" onclick="slideActual(2)"></span>
+		<span class="dot" onclick="slideActual(3)"></span>
+		<span class="dot" onclick="slideActual(4)"></span>
+		<span class="dot" onclick="slideActual(5)"></span>
+		<span class="dot" onclick="slideActual(6)"></span>
+		
+	  </div>
+	</div>
+	 
+	  
+	  <div class="container">
+		<button onclick="topFunction()" id="myBtn" title="Go to top">Subir</button> 
+	  </div>
+	  
+	 
+	</div>
+	
+	
+	  <script>
+		// Definir un índice y llamar a la función que muestra un slide
+		let indiceSlide = 1;
+		mostrarSlides(indiceSlide);
+	  
+		// Mover el slide a través de los controles previo y próximo (1, -1)
+		function plusSlides(numero) {
+		  mostrarSlides(indiceSlide += numero);
+		}
+	  
+		// Mover el slide a través de los indicadores
+		function slideActual(numero) {
+		  mostrarSlides(indiceSlide = numero);
+		}
+	  
+		function mostrarSlides(numero) {
+		  // Obtener los elementos para operar con ellos
+		  let slides = document.getElementsByClassName("elementoCarousel");
+		  let indicadores = document.getElementsByClassName("dot");
+	  
+		  // Validar "numero"
+		  if (numero > slides.length) { indiceSlide = 1 }
+		  if (numero < 1) { indiceSlide = slides.length }
+	  
+		  // Iterar y ocultar los slides y el estilo de los indicadores
+		  for (let i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		  }
+		  for (i = 0; i < indicadores.length; i++) {
+			indicadores[i].className = indicadores[i].className.replace(" active", "");
+		  }
+	  
+		  // Mostrar el slide indicado con display block y agregarle el estilo al punto indicado
+		  slides[indiceSlide - 1].style.display = "block";
+		  indicadores[indiceSlide - 1].className += " active";
+		} 
+	  
+		// SCROLL TO TOP:
+	  
+		let buttonTop = document.getElementById("myBtn");
+	  
+		// Al hacer scroll down 20px del top del documento, mostrar el boton
+		window.onscroll = function() { 
+		  scrollFunction()
+		};
+	  
+		function scrollFunction() {
+		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		  buttonTop.style.display = "block";
+		} else {
+		  buttonTop.style.display = "none";
+		}
+		}
+	  
+		// Al hacer click, hacer scroll al top del documento
+		function topFunction() {
+		  document.body.scrollTop = 0; // Safari
+		  document.documentElement.scrollTop = 0; // Chrome, Firefox, IE and Opera
+		} 
+	  </script>
+	
+	 
+	 </main>
+
+		<div class="texto1">
+			<h2 class="subtitulo1"> ¿QUE HACEMOS?</h2>
+			<h4>Somos un estudio de tatuajes y piercings que quiere brindarte seguridad. Con nuestro tatuador y dueño del estudio, Maui, nuestra tatuadora Moana y nuestro piercer Chief Tiu, vinimos a crear obras de arte que seran parte de tu cuerpo.</h4>
+		</div>
+	</div>
+    <div class="artistas">
+		<h2 class="tituloartistas">NUESTROS ARTISTAS</h2>
+		<article class="artistas1">
+		<div class="maui">
+			<a href="tatuajesyp.html"><img src="images/maui.png" alt="foto Maui" class="fotoartistas"></a>
+			<h3 class="mauitexto">MAUI</h3>
+			<p class="mauitexto">Dueño y tatuador</p>
+		</div>	
+		<div class="moana">
+			<a href="tatuajesyp.html"><img src="images/moana.png" alt="foto Moana" class="fotoartistas"></a>
+			<h3>MOANA</h3>
+			<p>Tatuadora</p>
+		</div>
+		<div class="chieftiu">
+			<a href="tatuajesyp.html"><img src="images/chieftiu.png" alt="foto Chief Tiu" class="fotoartistas"></a>
+			<h3>CHIEF TIU</h3>
+			<p>Piercer</p>
+		</div>
+	</article>
+	</div>
+</section> 
+<footer class="footer">
+	<div class="redes">
+		<img src="images/instagram.png" alt="Instagram" class="redes1">
+		<img src="images/mail.png" alt="Mail" class="redes2">
+		<img src="images/whatsapp.png" alt="WhatsApp" class="redes3">	
+	</div>
+</footer>
+</body>
+</html>
